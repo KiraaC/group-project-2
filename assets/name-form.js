@@ -7,6 +7,7 @@ const mysql = require('mysql');
 // local host query 
 // axios request
 
+
 const queryURL = "https://www.placeholder.com/=";
 // ajax
 $.ajax({
