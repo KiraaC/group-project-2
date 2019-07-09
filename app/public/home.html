@@ -36,13 +36,13 @@
       </div>
 
       <div class="btn_controller controller"><img src="./assets/picture/controller.png" />
-        <div class="round-button-X">
+        <div id="openBtn" class="round-button-X">
           <button class="round-button">X</button>
         </div>
       </div>
 
       <div class="btn_controller controller"><img src="./assets/picture/controller.png" />
-        <div class="round-button-Y">
+        <div id="closeBtn" class="round-button-Y">
           <button class="round-button">Y</button>
         </div>
       </div>
@@ -85,6 +85,20 @@
       console.log("error")
     }
   })
+
+  document.getElementById("openBtn").addEventListener("click", function(e){
+    e.preventDefault()
+    db.ref("/Data").set({
+      wingStatus: "open"
+    })
+  });
+
+  document.getElementById("closeBtn").addEventListener("click", function(e){
+    e.preventDefault()
+    db.ref("/Data").set({
+      wingStatus: "closed"
+    })
+  });
 
   $(function () {
     $('.btn_show').click(function () {
