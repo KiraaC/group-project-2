@@ -1,0 +1,74 @@
+body {
+    width: 1665px !important;
+    height: 100% !important;
+}
+
+.controller img {
+    width: 750px !important;
+    height: 550px !important;
+}
+
+.container {
+    text-align: center !important;
+    margin: 0 auto !important;
+}
+
+.round-button-X {
+    position: absolute;
+    top: 500px;
+    left: 1033px;
+}
+
+.round-button-Y {
+    position: absolute;
+    top: 545px;
+    left: 971px;
+}
+
+.round-button-A {
+    position: absolute;
+    top: 545px;
+    left: 1095px;
+}
+
+.round-button-B {
+    position: absolute;
+    top: 589px;
+    left: 1033px;
+}
+
+
+.round-button{ 
+ 
+    width: 55px; 
+ 
+    height: 35px; 
+ 
+    text-decoration: none; 
+ 
+    display: inline-block; 
+ 
+    outline: none; 
+ 
+    cursor: pointer; 
+ 
+    border-style: none; 
+ 
+    color: white; 
+ 
+    background-color: transparent; 
+ 
+    border-radius: 100%; 
+ 
+    overflow: none; 
+ 
+    text-align: center; 
+ 
+} 
+ 
+.round-button:active{ 
+ 
+    background-color: #2980b9; 
+ 
+}
+ 
