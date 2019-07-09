@@ -11,7 +11,8 @@
   <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.0.min.js"></script>
   <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-
+  <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
 </head>
 
 <body>
@@ -34,41 +35,65 @@
         </button></a>
       </div>
 
-      <div class="btn_controller controller"><img src="./assets/picture/controller.png"/>
+      <div class="btn_controller controller"><img src="./assets/picture/controller.png" />
         <div class="round-button-X">
-        <button class="round-button">X</button>
-      </div>
+          <button class="round-button">X</button>
+        </div>
       </div>
 
-      <div class="btn_controller controller"><img src="./assets/picture/controller.png"/>
+      <div class="btn_controller controller"><img src="./assets/picture/controller.png" />
         <div class="round-button-Y">
-        <button class="round-button">Y</button>
-      </div>
+          <button class="round-button">Y</button>
+        </div>
       </div>
 
-      <div class="btn_controller controller"><img src="./assets/picture/controller.png"/>
+      <div class="btn_controller controller"><img src="./assets/picture/controller.png" />
         <div class="round-button-A">
-        <button class="round-button">A</button>
-      </div>
+          <button class="round-button">A</button>
+        </div>
       </div>
 
-      <div class="btn_controller controller"><img src="./assets/picture/controller.png"/>
+      <div class="btn_controller controller"><img src="./assets/picture/controller.png" />
         <div class="round-button-B">
-        <button class="round-button">B</button>
-      </div>
+          <button class="round-button">B</button>
+        </div>
       </div>
     </div>
   </div>
 
 </body>
 <script type="text/javascript">
-    $(function () {
-      $('.btn_show').click(function () {
-        $('.btn_controller').show();
-      });
-      $('.btn_hide').click(function () {
-        $('.btn_controller').hide();
-      });
+
+  var firebaseConfig = {
+    apiKey: "AIzaSyAVxj8nLxL6Boim06Lec7Oiv8oXT1FGCS0",
+    authDomain: "conwings-eb540.firebaseapp.com",
+    databaseURL: "https://conwings-eb540.firebaseio.com",
+    projectId: "conwings-eb540",
+    storageBucket: "",
+    messagingSenderId: "289717042638",
+    appId: "1:289717042638:web:dbf27aa695d00bc5"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  db = firebase.database();
+
+  db.ref("/Data").on("value", function (snap) {
+    try {
+      let data = snap.val()
+      console.log(data.wingStatus)
+    } catch {
+      console.log("error")
+    }
+  })
+
+  $(function () {
+    $('.btn_show').click(function () {
+      $('.btn_controller').show();
     });
+    $('.btn_hide').click(function () {
+      $('.btn_controller').hide();
+    });
+  });
 </script>
+
 </html>
