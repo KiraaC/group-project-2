@@ -12,4 +12,8 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "./../public/control.html"));
   });
 
+  app.get("/contacts", function(req, res) {
+    res.sendFile(path.join(__dirname, "./../public/contacts.html"));
+  });
+
 };

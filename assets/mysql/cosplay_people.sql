@@ -5,4 +5,4 @@ INSERT INTO contacts
 VALUES (2,'Celeste','Gragore','parisfashion@gmail.com','555-434-0080','Merci Killjoy', 'Bonjour!');
 
 INSERT INTO contacts
-VALUES (3,'Sammy','Wiseman','scurydog@gmail.com','555-123-0000','Pirate Raider', 'Cosplay Fabricator');
+VALUES (3,'Sammy','Wiseman','scurvydog@gmail.com','555-123-0000','Pirate Raider', 'Cosplay Fabricator');
