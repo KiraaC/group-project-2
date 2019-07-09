@@ -1,13 +1,18 @@
-var express = require("express");
+const express = require("express");
+const mysql = require('mysql');
 
-// make some changes to add to branch then make pull request
 
-// routes
+// will update later
+// add script tags to html
+// local host query 
+// axios request
 
-    // ajax
-    $.ajax({
-        type:"POST",
-        data: dataString,
-        success: success()
-    });
-}); 
+
+const queryURL = "https://www.placeholder.com/=";
+// ajax
+$.ajax({
+  url: queryURL,
+  method: "POST"
+}).then(function (response) {
+  console.log(response);
+});
