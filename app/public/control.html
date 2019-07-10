@@ -6,8 +6,8 @@
   <title>Document</title>
 
   <!-- Latest compiled and minified CSS & JS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.0.min.js"></script>
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
@@ -16,26 +16,44 @@
 </head>
 
 <body>
-
   <div class="container">
-
-    <div class="jumbotron align-content-center">
-      <h1> Cosplay App</h1>
-      <hr>
-      <h2>Control your tech! </h2>
-      <h2>Save contacts!</h2>
-      <br>
-
-      <div>
+    <div class="jumbotron">
+      <img class="controltopimg" src="./assets/picture/wings.jpg">
+      <ul class="nav nav-tabs nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/control">Control</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contacts">Contacts</a>
+        </li>
+      </ul>
+    </div>
+ 
+      <div class="testing">
+        <div class="controller_info">
+          <h3>Controller Info</h3>
+          <p>X : Open wings</p> 
+          <p>Y : Close wings</p>
+          <p>A : Light On</p> 
+          <p>Y : Light Off</p>
+        </div>
         <button type="button" class="btn btn-lg btn-primary btn_show">
-          <h4><i class="fal fa-bat"></i> show</h4>
-        </button></a>
-        <button type="button" class="btn btn-lg btn-primary btn_hide">
-          <h4><i class="fal fa-bat"></i> hide</h4>
-        </button></a>
+          <img src="./assets/picture/controller.png" class="btn-img">
+        </button>
+        <button type="button2" class="btn btn-lg btn-primary btn_show2">
+          <img src="./assets/picture/voicerec.jpg" class="btn-img">
+        </button>
+        <div class="voicerec_info">
+          <p>Voice Recording:</p> </br>
+          <p>Blah Blah</p> </br>
+        </div>
       </div>
 
-      <div class="btn_controller controller"><img src="./assets/picture/controller.png" />
+      <div class="main">
+      <div class="btn_controller controller" id="hide"><img src="./assets/picture/controller.png" />
         <div class="round-button-X">
           <button class="round-button">X</button>
         </div>
@@ -52,9 +70,15 @@
         <div class="round-button-B">
           <button class="round-button">B</button>
         </div>
-    </div>
-  </div>
+      </div>
+      <div class="btn_controller2 controller" id="hide2">
+        <i class="fas fa-microphone-alt" id="microphone-icon"></i>
+        <button type="button" class="btn btn-primary" id="start-recording">Start Recording</button>
+        <button type="button" class="btn btn-primary" id="pause-recording">Stop Recording </i></button>
+        <button type="button" class="btn btn-primary" id="delete-content">Reset</button>
+      </div>
 
+    </div>
 </body>
 <script type="text/javascript">
 
@@ -80,12 +104,15 @@
     }
   })
 
-  $(function () {
-    $('.btn_show').click(function () {
-      $('.btn_controller').show();
+  $(document).ready(function () {
+    $(".btn_show").click(function () {
+      $(".btn_controller").toggle();
     });
-    $('.btn_hide').click(function () {
-      $('.btn_controller').hide();
+  });
+
+  $(document).ready(function () {
+    $(".btn_show2").click(function () {
+      $(".btn_controller2").toggle();
     });
   });
 </script>
