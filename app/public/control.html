@@ -1,48 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.0.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
 </head>
+
 <body>
 
-    <h1 align="center">Wing Controls</h1>
-    <div class ="row mt-5">
-        <button type="button" class="btn btn-primary btn-lg btn-block">OPEN</button>
-    </div>
+  <div class="container">
 
-    <div class ="row mt-5">
-            <button type="button" class="btn btn-secondary btn-lg btn-block">CLOSE</button>
+    <div class="jumbotron align-content-center">
+      <h1> Cosplay App</h1>
+      <hr>
+      <h2>Control your tech! </h2>
+      <h2>Save contacts!</h2>
+      <br>
+
+      <div>
+        <button type="button" class="btn btn-lg btn-primary btn_show">
+          <h4><i class="fal fa-bat"></i> show</h4>
+        </button></a>
+        <button type="button" class="btn btn-lg btn-primary btn_hide">
+          <h4><i class="fal fa-bat"></i> hide</h4>
+        </button></a>
+      </div>
+
+      <div class="btn_controller controller"><img src="./assets/picture/controller.png" />
+        <div class="round-button-X">
+          <button class="round-button">X</button>
         </div>
 
-        <script type="text/javascript">
-            // Your web app's Firebase configuration
-          var firebaseConfig = {
-            apiKey: "AIzaSyAVxj8nLxL6Boim06Lec7Oiv8oXT1FGCS0",
-            authDomain: "conwings-eb540.firebaseapp.com",
-            databaseURL: "https://conwings-eb540.firebaseio.com",
-            projectId: "conwings-eb540",
-            storageBucket: "",
-            messagingSenderId: "289717042638",
-            appId: "1:289717042638:web:dbf27aa695d00bc5"
-          };
-          // Initialize Firebase
-          firebase.initializeApp(firebaseConfig);
-          db = firebase.database();  
+        <div class="round-button-Y">
+          <button class="round-button">Y</button>
+        </div>
 
-          db.ref("/Data").on("value", function(snap){
-              try{
-                  let data = snap.val()
-                  console.log(data.wingStatus)
-              } catch {
-                  console.log("error")
-              }
-          })
-      </script>
+        <div class="round-button-A">
+          <button class="round-button">A</button>
+        </div>
+
+
+        <div class="round-button-B">
+          <button class="round-button">B</button>
+        </div>
+    </div>
+  </div>
+
 </body>
+<script type="text/javascript">
+
+  var firebaseConfig = {
+    apiKey: "AIzaSyAVxj8nLxL6Boim06Lec7Oiv8oXT1FGCS0",
+    authDomain: "conwings-eb540.firebaseapp.com",
+    databaseURL: "https://conwings-eb540.firebaseio.com",
+    projectId: "conwings-eb540",
+    storageBucket: "",
+    messagingSenderId: "289717042638",
+    appId: "1:289717042638:web:dbf27aa695d00bc5"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  db = firebase.database();
+
+  db.ref("/Data").on("value", function (snap) {
+    try {
+      let data = snap.val()
+      console.log(data.wingStatus)
+    } catch {
+      console.log("error")
+    }
+  })
+
+  $(function () {
+    $('.btn_show').click(function () {
+      $('.btn_controller').show();
+    });
+    $('.btn_hide').click(function () {
+      $('.btn_controller').hide();
+    });
+  });
+</script>
+
 </html>

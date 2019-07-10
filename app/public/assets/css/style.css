@@ -1,6 +1,9 @@
 body {
     width: 1665px !important;
     height: 100% !important;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .controller img {
@@ -12,6 +15,8 @@ body {
     text-align: center !important;
     margin: 0 auto !important;
 }
+
+
 
 .round-button-X {
     position: absolute;
