@@ -1,7 +1,8 @@
 // Dependencies
 const express = require("express");
 const path = require("path");
-const mysql = require('mysql');
+const mysql = require("mysql");
+// Sets up the Express App
 const app = express();
 const PORT = process.env.PORT ||9040;
 
@@ -15,7 +16,7 @@ require(path.join(__dirname, "./app/routing/apiRoutes.js"))(app);
  
 const connection = mysql.createConnection({
   host: 'localhost',
-  port: 3306,
+  port: 9040,
   user: 'root',
   password: '!dmagkgkt1',
   database: 'cosplaydb'
