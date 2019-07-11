@@ -9,10 +9,13 @@ body {
 
 .testing {
     margin-top: 0;
-    background-color: white;
+    background-color: rgb(240, 240, 240);
 }
 .main {
-    background-color: transparent;
+    text-align: center !important;
+    margin: 0 auto !important;
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px !important;
 }
 
 .controltopimg {
@@ -26,12 +29,13 @@ body {
 
 .btn-img {
     padding: 0;
-    width: 459px;
+    width: 450px;
     height: 235px;
 }
 
 .controller_info {
-    padding-top: 0 auto;
+    padding-top: 20px;
+    padding-left: 55px;
     width: 235px;
     height: 235px;
     float: left;
@@ -39,6 +43,8 @@ body {
 }
 
 .voicerec_info {
+    padding-top: 20px;
+    padding-right: 55px;
     width: 235px;
     height: 235px;
     float: right;
@@ -51,10 +57,6 @@ body {
     margin-bottom: 20px;
 }
 
-.container {
-    text-align: center !important;
-    margin: 0 auto !important;
-}
 
 .jumbotron {
     border-radius: 10px;
@@ -160,9 +162,15 @@ body {
     display: none;
 } 
 
-.contactsform {
-    background-color: white !important;
-    padding: 20, 20, 20, 20 !important;
+form {
+    width: 90%;
+    height: 90%;
+    padding-left: 100px;
+    padding-top: 30px;
+    padding-bottom: 50px;
 }
 
-
+.maincontent {
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px !important;
+}

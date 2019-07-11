@@ -17,6 +17,7 @@
 
 <body>
   <div class="container">
+      <div class="main">
     <div class="jumbotron">
       <img class="controltopimg" src="./assets/picture/wings.jpg">
       <ul class="nav nav-tabs nav-pills">
@@ -50,7 +51,6 @@
         <p>R : Reset</p>
       </div>
     </div>
-
     <div class="main">
       <div class="btn_controller controller" id="hide"><img src="./assets/picture/controller.png" />
         <div class="round-button-X">
@@ -69,12 +69,13 @@
         <div class="round-button-B">
           <button class="round-button" id="lightsoff">B</button>
         </div>
-      </div>
           <i class="fas fa-microphone-alt" id="microphone-icon"></i>
           <button type="round-button"  id="start">R/R</button>
           <button type="round-button"  id="stop">R/L </i></button>
           <button type="round-button"  id="delete-content">R</button>
       </div>
+      </div>
+  </div>
   </div>
 </body>
 <script type="text/javascript">
@@ -169,5 +170,6 @@
   $('#stop').on('click', function (e) {
       recognition.stop();
   });
+
 </script>
 </html>
