@@ -144,13 +144,21 @@
       if (!mobileRepeatBug) {
         command = transcript;
         console.log('command was: ', command)
+       
         if(command === 'open'){
           console.log('opening')
+          db.ref("/Data").set({
+          wingStatus: "open"
+        })
+
         } else if (command === "close"){
           console.log('closing')
+          db.ref("/Data").set({
+          wingStatus: "close"
+        })
         } else {
           console.log('unrecognized command')
-        }
+        } 
       }
   };
 
