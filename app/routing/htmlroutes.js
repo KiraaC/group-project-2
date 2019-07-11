@@ -13,11 +13,11 @@ module.exports = function (app) {
 
   // placeholder
   app.get("/control", function (req, res) {
-    res.sendFile(path.join(__dirname, "./.././assets/mysql/cosplaydb"));
+    res.sendFile(path.join(__dirname, "./../../assets/mysql/cosplaydb"));
   });
 
   app.get("/control", function (req, res) {
-    res.sendFile(path.join(__dirname, "./.././assets/mysql/cosplaydb"));
+    res.sendFile(path.join(__dirname, "./../../assets/mysql/cosplaydb"));
   });
 
   app.get("/contacts", function (req, res) {

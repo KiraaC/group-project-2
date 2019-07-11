@@ -26,7 +26,7 @@ body {
 
 .btn-img {
     padding: 0;
-    width: 235px;
+    width: 459px;
     height: 235px;
 }
 
@@ -90,6 +90,33 @@ body {
     left: 1033px;
 }
 
+#start {
+    position: absolute;
+    top: 872px;
+    left: 923px;
+    color: white;
+    background-color: transparent !important;
+    border-color: transparent!important;
+}
+
+#stop {
+    position: absolute;
+    top: 873px;
+    left: 700px;
+    color: white;
+    background-color: transparent !important;
+    border-color: transparent!important;
+}
+
+#delete-content {
+    position: absolute;
+    height: 15px;
+    top: 835px;
+    left: 822px;
+    color: white;
+    background-color: transparent !important;
+    border-color: transparent!important;
+}
 
 .round-button{ 
  
@@ -132,3 +159,12 @@ body {
 #hide2 {
     display: none;
 } 
+
+.contacts_set {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+

@@ -31,44 +31,43 @@
         </li>
       </ul>
     </div>
- 
-      <div class="testing">
-        <div class="controller_info">
-          <h3>Controller Info</h3>
-          <p>X : Open wings</p> 
-          <p>Y : Close wings</p>
-          <p>A : Light On</p> 
-          <p>Y : Light Off</p>
-        </div>
-        <button type="button" class="btn btn-lg btn-primary btn_show">
-          <img src="./assets/picture/controller.png" class="btn-img">
-        </button>
-        <button type="button2" class="btn btn-lg btn-primary btn_show2">
-          <img src="./assets/picture/voicerec.jpg" class="btn-img">
-        </button>
-        <div class="voicerec_info">
-          <p>Voice Recording:</p> </br>
-          <p>Blah Blah</p> </br>
-        </div>
-      </div>
 
-      <div class="main">
+    <div class="testing">
+      <div class="controller_info">
+        <h3>Controller Info</h3>
+        <p>X : Open wings</p>
+        <p>Y : Close wings</p>
+        <p>A : Light On</p>
+        <p>Y : Light Off</p>
+      </div>
+      <button type="button" class="btn btn-lg btn-primary btn_show">
+        <img src="./assets/picture/controller.png" class="btn-img">
+      </button>
+      <div class="voicerec_info">
+        <h3>Voice Info</h3> </br>
+        <p>R/L : Stop Recording</p>
+        <p>R/R : Start Recording</p>
+        <p>R : Reset</p>
+      </div>
+    </div>
+
+    <div class="main">
       <div class="btn_controller controller" id="hide"><img src="./assets/picture/controller.png" />
         <div class="round-button-X">
-          <button class="round-button">X</button>
+          <button class="round-button" id ="wingsup">X</button>
         </div>
 
         <div class="round-button-Y">
-          <button class="round-button">Y</button>
+          <button class="round-button" id="wingsdown">Y</button>
         </div>
 
         <div class="round-button-A">
-          <button class="round-button">A</button>
+          <button class="round-button" id="lightson">A</button>
         </div>
 
 
         <div class="round-button-B">
-          <button class="round-button">B</button>
+          <button class="round-button" id="lightsoff">B</button>
         </div>
       </div>
       <div class="btn_controller2 controller" id="hide2">
@@ -77,9 +76,7 @@
         <button type="button" class="btn btn-primary" id="stop">Stop Recording </i></button>
         <button type="button" class="btn btn-primary" id="delete-content">Reset</button>
       </div>
-
-    </div>
-    
+  </div>
 </body>
 <script type="text/javascript">
 
@@ -109,12 +106,23 @@
     $(".btn_show").click(function () {
       $(".btn_controller").toggle();
     });
-  });
 
-  $(document).ready(function () {
     $(".btn_show2").click(function () {
       $(".btn_controller2").toggle();
     });
+
+    $("#wingsup").click(function() {
+      db.ref("/Data").set({
+        wingStatus: "open"
+      })      
+    });
+    
+    $("#wingsdown").click(function() {
+      db.ref("/Data").set({
+        wingStatus: "close"
+      })
+    });
+
   });
 
   try {
@@ -152,5 +160,4 @@ $('#stop').on('click', function (e) {
     recognition.stop();
 });
 </script>
-
 </html>
