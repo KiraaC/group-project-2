@@ -1,6 +1,4 @@
 body {
-    width: 1665px !important;
-    height: 100% !important;
     background-size: 100% 100%;
     background-image: url(../picture/sky-background.jpg);
     background-repeat: no-repeat;
@@ -69,40 +67,40 @@ body {
 .round-button-X {
     position: absolute;
     top: 740px;
-    left: 1033px;
+    left: 1040px;
 }
 
 .round-button-Y {
     position: absolute;
     top: 785px;
-    left: 971px;
+    left: 979px;
 }
 
 .round-button-A {
     position: absolute;
     top: 785px;
-    left: 1095px;
+    left: 1103px;
 }
 
 .round-button-B {
     position: absolute;
-    top: 829px;
-    left: 1033px;
+    top: 831px;
+    left: 1040px;
 }
 
-#start-recording {
+#start {
     position: absolute;
     top: 872px;
-    left: 923px;
+    left: 930px;
     color: white;
     background-color: transparent !important;
     border-color: transparent!important;
 }
 
-#pause-recording {
+#stop {
     position: absolute;
     top: 873px;
-    left: 700px;
+    left: 710px;
     color: white;
     background-color: transparent !important;
     border-color: transparent!important;
@@ -112,7 +110,7 @@ body {
     position: absolute;
     height: 15px;
     top: 835px;
-    left: 822px;
+    left: 830px;
     color: white;
     background-color: transparent !important;
     border-color: transparent!important;
@@ -165,4 +163,9 @@ body {
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 20px;
+}
+
+
+@media only screen and (max-width: 600){
+
 }
