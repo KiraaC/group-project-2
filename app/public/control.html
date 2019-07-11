@@ -113,11 +113,15 @@
     });
 
     $("#wingsup").click(function() {
-      console.log("wingsup");
+      db.ref("/Data").set({
+        wingStatus: "open"
+      })      
     });
     
     $("#wingsdown").click(function() {
-      console.log("wingsdown");
+      db.ref("/Data").set({
+        wingStatus: "close"
+      })
     });
 
   });
