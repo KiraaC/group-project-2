@@ -12,7 +12,7 @@ body {
     background-color: white;
 }
 .main {
-    background-color: white;
+    background-color: transparent;
 }
 
 .controltopimg {
@@ -93,7 +93,7 @@ body {
 #start {
     position: absolute;
     top: 872px;
-    left: 923px;
+    left: 927px;
     color: white;
     background-color: transparent !important;
     border-color: transparent!important;
