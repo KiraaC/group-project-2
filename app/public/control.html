@@ -54,20 +54,20 @@
     <div class="main">
       <div class="btn_controller controller" id="hide"><img src="./assets/picture/controller.png" />
         <div class="round-button-X">
-          <button class="round-button">X</button>
+          <button class="round-button" id ="wingsup">X</button>
         </div>
 
         <div class="round-button-Y">
-          <button class="round-button">Y</button>
+          <button class="round-button" id="wingsdown">Y</button>
         </div>
 
         <div class="round-button-A">
-          <button class="round-button">A</button>
+          <button class="round-button" id="lightson">A</button>
         </div>
 
 
         <div class="round-button-B">
-          <button class="round-button">B</button>
+          <button class="round-button" id="lightsoff">B</button>
         </div>
 
       <i class="fas fa-microphone-alt" id="microphone-icon"></i>
@@ -107,12 +107,19 @@
     $(".btn_show").click(function () {
       $(".btn_controller").toggle();
     });
-  });
 
-  $(document).ready(function () {
     $(".btn_show2").click(function () {
       $(".btn_controller2").toggle();
     });
+
+    $("#wingsup").click(function() {
+      console.log("wingsup");
+    });
+    
+    $("#wingsdown").click(function() {
+      console.log("wingsdown");
+    });
+
   });
 </script>
 
