@@ -12,7 +12,7 @@ body {
     background-color: white;
 }
 .main {
-    background-color: transparent;
+    background-color: white;
 }
 
 .controltopimg {
@@ -160,11 +160,9 @@ body {
     display: none;
 } 
 
-.contacts_set {
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
+.contactsform {
+    background-color: white !important;
+    padding: 20, 20, 20, 20 !important;
 }
 
 
