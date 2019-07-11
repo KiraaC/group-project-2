@@ -69,14 +69,13 @@
         <div class="round-button-B">
           <button class="round-button" id="lightsoff">B</button>
         </div>
-
-      <i class="fas fa-microphone-alt" id="microphone-icon"></i>
-      <button class="round-button" id="start">R/R</button>
-      <button class="round-botton" id="stop">R/L</button>
-      <button type="button" id="delete-content">R</button>
       </div>
-    </div>
-
+      <div class="btn_controller2 controller" id="hide2">
+        <i class="fas fa-microphone-alt" id="microphone-icon"></i>
+        <button type="button" class="btn btn-primary" id="start">Start Recording</button>
+        <button type="button" class="btn btn-primary" id="stop">Stop Recording </i></button>
+        <button type="button" class="btn btn-primary" id="delete-content">Reset</button>
+      </div>
   </div>
 </body>
 <script type="text/javascript">
@@ -125,6 +124,40 @@
     });
 
   });
-</script>
 
+  try {
+    var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    var recognition = new SpeechRecognition();
+} catch (e) {
+    console.error(e);
+}
+
+var command = '';
+
+recognition.continuous = true;
+ 
+recognition.onresult = function (event) {
+    var current = event.resultIndex;
+    var transcript = event.results[current][0].transcript;
+    var mobileRepeatBug = (current == 1 && transcript == event.results[0][0].transcript);
+
+    if (!mobileRepeatBug) {
+      command = transcript;
+      console.log('command was: ', command)
+      if(command === 'open'){
+        console.log('opening')
+      } else {
+        console.log('closing')
+      }
+    }
+};
+
+$('#start').on('click', function (e) {
+    recognition.start();
+});
+
+$('#stop').on('click', function (e) {
+    recognition.stop();
+});
+</script>
 </html>
