@@ -1,4 +1,6 @@
 body {
+    width: 1665px !important;
+    height: 100% !important;
     background-size: 100% 100%;
     background-image: url(../picture/sky-background.jpg);
     background-repeat: no-repeat;
@@ -67,31 +69,31 @@ body {
 .round-button-X {
     position: absolute;
     top: 740px;
-    left: 1040px;
+    left: 1033px;
 }
 
 .round-button-Y {
     position: absolute;
     top: 785px;
-    left: 979px;
+    left: 971px;
 }
 
 .round-button-A {
     position: absolute;
     top: 785px;
-    left: 1103px;
+    left: 1095px;
 }
 
 .round-button-B {
     position: absolute;
-    top: 831px;
-    left: 1040px;
+    top: 829px;
+    left: 1033px;
 }
 
 #start {
     position: absolute;
     top: 872px;
-    left: 930px;
+    left: 923px;
     color: white;
     background-color: transparent !important;
     border-color: transparent!important;
@@ -100,7 +102,7 @@ body {
 #stop {
     position: absolute;
     top: 873px;
-    left: 710px;
+    left: 700px;
     color: white;
     background-color: transparent !important;
     border-color: transparent!important;
@@ -110,7 +112,7 @@ body {
     position: absolute;
     height: 15px;
     top: 835px;
-    left: 830px;
+    left: 822px;
     color: white;
     background-color: transparent !important;
     border-color: transparent!important;
@@ -166,6 +168,3 @@ body {
 }
 
 
-@media only screen and (max-width: 600){
-
-}
