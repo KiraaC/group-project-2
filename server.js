@@ -16,7 +16,7 @@ require(path.join(__dirname, "./app/routing/apiRoutes.js"))(app);
  
 const connection = mysql.createConnection({
   host: 'localhost',
-  port: 9040,
+  port: 3306,
   user: 'root',
   password: '!dmagkgkt1',
   database: 'cosplaydb'
