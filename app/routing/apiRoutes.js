@@ -1,9 +1,5 @@
-
-
-
 module.exports = function (app) {
-    // Routes
-    app.get("api/control", function (req, res) {
-        res.json(data)
-    });  
-  };
+    app.post("/api/contacts", function (req, res) {
+        console.log(req.body.FName)
+    })
+};
