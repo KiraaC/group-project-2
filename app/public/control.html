@@ -17,65 +17,55 @@
 
 <body>
   <div class="container">
-      <div class="main">
-    <div class="jumbotron">
-      <img class="controltopimg" src="./assets/picture/wings.jpg">
-      <ul class="nav nav-tabs nav-pills">
-        <li class="nav-item">
-          <a class="nav-link" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="/control">Control</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/contacts">Contacts</a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="testing">
-      <div class="controller_info">
-        <h3>Controller Info</h3>
-        <p>X : Open wings</p>
-        <p>Y : Close wings</p>
-        <p>A : Light On</p>
-        <p>Y : Light Off</p>
-      </div>
-      <button type="button" class="btn btn-lg btn-primary btn_show">
-        <img src="./assets/picture/controller.png" class="btn-img">
-      </button>
-      <div class="voicerec_info">
-        <h3>Voice Info</h3> </br>
-        <p>R/L : Stop Recording</p>
-        <p>R/R : Start Recording</p>
-        <p>R : Reset</p>
-      </div>
-    </div>
     <div class="main">
-      <div class="btn_controller controller" id="hide"><img src="./assets/picture/controller.png" />
-        <div class="round-button-X">
-          <button class="round-button" id ="wingsup">X</button>
-        </div>
+      <div class="jumbotron">
+        <img class="controltopimg" src="./assets/picture/wings.jpg">
+        <ul class="nav nav-tabs nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/control">Control</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contacts">Contacts</a>
+          </li>
+        </ul>
+      </div>
 
-        <div class="round-button-Y">
-          <button class="round-button" id="wingsdown">Y</button>
+      <div class="testing">
+        <img src="./assets/picture/Controllerinfo.png" class="info-img">
+        <button type="button" class="btn btn-lg btn-primary btn_show btn_middle">
+          <img src="./assets/picture/controller.png" class="btn-img">
+        </button>
+        <div class="voicerec_info">
         </div>
+      </div>
+      <div class="main">
+        <div class="btn_controller controller" id="hide"><img src="./assets/picture/controller.png" />
+          <div class="round-button-X">
+            <button class="round-button" id="wingsup">X</button>
+          </div>
 
-        <div class="round-button-A">
-          <button class="round-button" id="lightson">A</button>
-        </div>
+          <div class="round-button-Y">
+            <button class="round-button" id="wingsdown">Y</button>
+          </div>
+
+          <div class="round-button-A">
+            <button class="round-button" id="lightson">A</button>
+          </div>
 
 
-        <div class="round-button-B">
-          <button class="round-button" id="lightsoff">B</button>
-        </div>
+          <div class="round-button-B">
+            <button class="round-button" id="lightsoff">B</button>
+          </div>
           <i class="fas fa-microphone-alt" id="microphone-icon"></i>
-          <button type="round-button"  id="start">R/R</button>
-          <button type="round-button"  id="stop">R/L </i></button>
-          <button type="round-button"  id="delete-content">R</button>
+          <button type="round-button" id="start">R/R</button>
+          <button type="round-button" id="stop">R/L </i></button>
+          <button type="round-button" id="delete-content">R</button>
+        </div>
       </div>
-      </div>
-  </div>
+    </div>
   </div>
 </body>
 <script type="text/javascript">
@@ -111,65 +101,66 @@
       $(".btn_controller2").toggle();
     });
 
-    $("#wingsup").click(function() {
+    $("#wingsup").click(function () {
       db.ref("/Data").set({
         wingStatus: "open"
-      })      
+      })
     });
-    
-    $("#wingsdown").click(function() {
+
+    $("#wingsdown").click(function () {
       db.ref("/Data").set({
         wingStatus: "close"
       })
     });
   });
 
-  
+
   // voice control
-    try {
-      var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-      var recognition = new SpeechRecognition();
+  try {
+    var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    var recognition = new SpeechRecognition();
   } catch (e) {
-      console.error(e);
+    console.error(e);
   }
 
   var command = '';
 
   recognition.continuous = true;
-  
-  recognition.onresult = function (event) {
-      var current = event.resultIndex;
-      var transcript = event.results[current][0].transcript;
-      var mobileRepeatBug = (current == 1 && transcript == event.results[0][0].transcript);
 
-      if (!mobileRepeatBug) {
-        command = transcript;
-        console.log('command was: ', command)
-       
-        if(command === 'open'){
-          console.log('opening')
-          db.ref("/Data").set({
+  recognition.onresult = function (event) {
+    var current = event.resultIndex;
+    var transcript = event.results[current][0].transcript;
+    var mobileRepeatBug = (current == 1 && transcript == event.results[0][0].transcript);
+
+    if (!mobileRepeatBug) {
+      command = transcript;
+      console.log('command was: ', command)
+
+      if (command === 'open') {
+        console.log('opening')
+        db.ref("/Data").set({
           wingStatus: "open"
         })
 
-        } else if (command === "close"){
-          console.log('closing')
-          db.ref("/Data").set({
+      } else if (command === "close") {
+        console.log('closing')
+        db.ref("/Data").set({
           wingStatus: "close"
         })
-        } else {
-          console.log('unrecognized command')
-        } 
+      } else {
+        console.log('unrecognized command')
       }
+    }
   };
 
   $('#start').on('click', function (e) {
-      recognition.start();
+    recognition.start();
   });
 
   $('#stop').on('click', function (e) {
-      recognition.stop();
+    recognition.stop();
   });
 
 </script>
+
 </html>
