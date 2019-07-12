@@ -32,28 +32,33 @@ body {
   color: black !important;
 }
 
-.btn-img {
-    padding: 0;
+.info-img {
     width: 300px;
+    height: 200px;
+    float: left;
+    margin-right: 0;
+    background-color: #2E64FE !important;
+}
+
+.btn_middle {
+    margin-left: 0;
+}
+
+.btn-img {
+    margin-left: 0;
+    padding: 0;
+    width: 285px;
     height: 180px;
 }
 
-.controller_info {
-    padding-top: 20px;
-    padding-left: 55px;
-    width: 180px;
-    height: 235px;
-    float: left;
-    font-style: bold;
-    font-size: 10px;
-}
 
 .voicerec_info {
     padding-top: 20px;
     padding-right: 55px;
-    width: 180px;
-    height: 235px;
+    width: 300px;
+    height: 200px;
     float: right;
+    border-style: solid;
 }
 
 .controller img {
@@ -79,31 +84,31 @@ body {
 
 .round-button-X {
     position: absolute;
-    top: 595px;
+    top: 558px;
     left: 1033px;
 }
 
 .round-button-Y {
     position: absolute;
-    top: 630px;
+    top: 598px;
     left: 971px;
 }
 
 .round-button-A {
     position: absolute;
-    top: 630px;
+    top: 598px;
     left: 1095px;
 }
 
 .round-button-B {
     position: absolute;
-    top: 669px;
+    top: 635px;
     left: 1033px;
 }
 
 #start {
     position: absolute;
-    top: 700px;
+    top: 667px;
     left: 927px;
     color: white;
     background-color: transparent !important;
@@ -112,7 +117,7 @@ body {
 
 #stop {
     position: absolute;
-    top: 700px;
+    top: 667px;
     left: 700px;
     color: white;
     background-color: transparent !important;
@@ -122,7 +127,7 @@ body {
 #delete-content {
     position: absolute;
     height: 15px;
-    top: 670px;
+    top: 637px;
     left: 822px;
     color: white;
     background-color: transparent !important;
