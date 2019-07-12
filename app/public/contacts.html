@@ -70,15 +70,43 @@
 
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Leave a Message</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"
-                        placeholder="Leave a Message"></textarea>
+                    <label for="exampleForm">Leave a Message</label>
+                    <textarea class="form-control" id="exampleForm" rows="2" placeholder="Leave a Message"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
             </form>
     </div>
-    </section>
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+
+        $("#submitBtn").click(function (e) {
+            e.preventDefault()
+
+            const newContact = {
+                FName: $("#inputFName").val().trim(),
+                LName: $("#inputLName").val().trim(),
+                Email: $("#inputEmail").val().trim(),
+                PhoneNumber: $("#inputPhoneNumber").val().trim(),
+                Character: $("#inputCharacter").val().trim(),
+                Message: $("#exampleForm").val().trim()
+            }
+
+            const queryURL = "/api/contacts";
+            // are the methods matching? yes!
+            $.ajax({
+                url: queryURL,
+                method: "POST",
+                data: newContact
+            })
+        });
+
+        // mysql string
+        // UPDATE cosplay_people (FName, LName, Email, PhoneNumber, Character, Message)
+        // SET
+    </script>
 </body>
 
 </html>
