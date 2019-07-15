@@ -4,8 +4,6 @@ const path = require("path");
 // Sets up the Express App
 const app = express();
 const PORT = process.env.PORT || 9040;
-const mysql = require("mysql");
-
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
