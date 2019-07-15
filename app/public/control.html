@@ -34,12 +34,26 @@
       </div>
 
       <div class="testing">
-        <img src="./assets/picture/Controllerinfo.png" class="info-img">
+        <div class="info-img">
+        </div>
+        <div class= info-li>
+          <li>X: Wing Open</li>
+          <li>Y: Wing Close</li>
+          <li>R/R: Voice on</li>
+          <li>R/L: Voice off</li>
+          </div>
+        </div>
         <button type="button" class="btn btn-lg btn-primary btn_show btn_middle">
           <img src="./assets/picture/controller.png" class="btn-img">
         </button>
         <div class="voicerec_info">
         </div>
+          <div class= voice-li>
+              <li>Click Controller Button</li>
+              <li>Click X, Y, RR, RL</li>
+              <li>So far 4 function</li>
+              <li>More function will be added</li>
+              </div>
       </div>
       <div class="main">
         <div class="btn_controller controller" id="hide"><img src="./assets/picture/controller.png" />
@@ -64,6 +78,9 @@
           <button type="round-button" id="stop">R/L </i></button>
           <button type="round-button" id="delete-content">R</button>
         </div>
+      </div>
+      <div class = "defaultmain">
+        <img src = "assets/picture/cosplaytutorial.png" class = "imgtutorial">
       </div>
     </div>
   </div>
@@ -90,8 +107,8 @@
     } catch {
       console.log("error")
     }
-  })
 
+  })
   $(document).ready(function () {
     $(".btn_show").click(function () {
       $(".btn_controller").toggle();
@@ -103,13 +120,13 @@
 
     $("#wingsup").click(function () {
       db.ref("/Data").set({
-        wingStatus: "open"
+        wingStatus: "close"
       })
     });
 
     $("#wingsdown").click(function () {
       db.ref("/Data").set({
-        wingStatus: "close"
+        wingStatus: "open"
       })
     });
   });
@@ -139,13 +156,13 @@
       if (command === 'open') {
         console.log('opening')
         db.ref("/Data").set({
-          wingStatus: "open"
+          wingStatus: "close"
         })
 
       } else if (command === "close") {
         console.log('closing')
         db.ref("/Data").set({
-          wingStatus: "close"
+          wingStatus: "open"
         })
       } else {
         console.log('unrecognized command')
