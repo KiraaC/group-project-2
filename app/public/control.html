@@ -68,6 +68,9 @@
           <button type="round-button" id="delete-content">R</button>
         </div>
       </div>
+      <div class = "defaultmain">
+        <img src = "assets/picture/cosplaytutorial.png" class = "imgtutorial">
+      </div>
     </div>
   </div>
 </body>
@@ -93,8 +96,8 @@
     } catch {
       console.log("error")
     }
-  })
 
+  })
   $(document).ready(function () {
     $(".btn_show").click(function () {
       $(".btn_controller").toggle();
@@ -106,13 +109,13 @@
 
     $("#wingsup").click(function () {
       db.ref("/Data").set({
-        wingStatus: "open"
+        wingStatus: "close"
       })
     });
 
     $("#wingsdown").click(function () {
       db.ref("/Data").set({
-        wingStatus: "close"
+        wingStatus: "open"
       })
     });
   });
