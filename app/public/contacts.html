@@ -46,11 +46,13 @@
                         <label for="inputFName">First Name</label>
                         <input type="fname" class="form-control" id="inputFName" placeholder="First Name">
                     </div>
+
                     <div class="form-group col-md-6">
                         <label for="inputLName">Last Name</label>
                         <input type="lname" class="form-control" id="inputLName" placeholder="Last Name">
                     </div>
                 </div>
+
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputEmail">Email</label>
@@ -62,29 +64,53 @@
                         <input type="phoneNumber" class="form-control" id="inputPhoneNumber" placeholder="Phone Number">
                     </div>
                 </div>
+
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputCharacter">Character Name</label>
                         <input type="text" class="form-control" id="inputCharacter" placeholder="Character Name">
                     </div>
-
                 </div>
+
                 <div class="form-group">
                     <label for="exampleForm">Leave a Message</label>
                     <textarea class="form-control" id="exampleForm" rows="2" placeholder="Leave a Message"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
             </form>
+
+            <div class="contactContainer">
+                <!-- empty for now -->
+            </div>
     </div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
 
+        const queryURL = "/api/contacts";
 
-        $("#submitBtn").click(function (e) {
+        const getAllContacts = () => {
+            $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then((data) => {
+            console.log(data)
+            data.forEach(element => {
+                console.log(element)
+                $('.contactContainer').append(
+                    `<p>ID: ${element.id} New Contact: </p>` +
+                    `<p>First Name: ${element.first_name}, Last Name: ${element.last_name}, Email: ${element.email_address}, Phone Number: ${element.phone_number}, Character Name: ${element.character_name}, Message: ${element.message}</p>` +
+                    '<hr>'
+                )
+            });
+        })
+        }
+
+        getAllContacts()
+        
+        $("#submitBtn").on('click', function (e) {
             e.preventDefault()
-
             const newContact = {
                 FName: $("#inputFName").val().trim(),
                 LName: $("#inputLName").val().trim(),
@@ -93,19 +119,14 @@
                 Character: $("#inputCharacter").val().trim(),
                 Message: $("#exampleForm").val().trim()
             }
-
+            // creating new contact
             const queryURL = "/api/contacts";
-            // are the methods matching? yes!
             $.ajax({
                 url: queryURL,
                 method: "POST",
                 data: newContact
-            })
-        });
-
-        // mysql string
-        // UPDATE cosplay_people (FName, LName, Email, PhoneNumber, Character, Message)
-        // SET
+            }).then(getAllContacts());
+        })
     </script>
 </body>
 
