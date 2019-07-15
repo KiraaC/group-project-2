@@ -194,3 +194,163 @@ form {
     padding-bottom: 0;
     margin-bottom: 0;
 }
+
+@media (max-width: 991px) { 
+    .controltopimg {
+        width: 100%;
+        height: 200px;
+    }
+    
+        
+    .btn_middle {
+        margin-left: 0;
+    }
+    .info-img {
+        background-image: url(../picture/leftwing.png);
+        background-size: 200px 200px !important;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        width: 200px;
+        height: 200px;
+        padding-top: 20px;
+        float: left;
+    }
+
+    .voicerec_info {
+        background-image: url(../picture/rightwing.png);
+        background-size: 200px 200px !important;
+        background-repeat: no-repeat;
+        padding-top: 20px;
+        width: 200px;
+        height: 200px;
+        float: right;
+    }
+    
+    .btn-img {
+        margin-left: 0;
+        padding: 0;
+        width: 240px;
+        height: 180px;
+    }
+    
+    .controller img {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        width: 500px !important;
+        height: 350px !important;
+        border-radius: 10px !important;
+    }
+    
+    
+    .jumbotron {
+        border-radius: 10px;
+        margin-top: 2px;
+        margin-bottom: 0;
+        padding-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+    }
+    
+    .round-button-X {
+        position: absolute;
+        top: 530px;
+        left: 957px;
+        font-size: 13px;
+    }
+    
+    .round-button-Y {
+        position: absolute;
+        top: 557px;
+        left: 916px;
+        font-size: 13px;
+    }
+    
+    .round-button-A {
+        position: absolute;
+        top: 557px;
+        left: 1000px;
+        font-size: 13px;
+    }
+    
+    .round-button-B {
+        position: absolute;
+        top: 587px;
+        left: 957px;
+        font-size: 13px;
+    }
+    
+    #start {
+        position: absolute;
+        top: 615px;
+        left: 893px;
+        color: white;
+        background-color: transparent !important;
+        border-color: transparent!important;
+        font-size: 13px;
+    }
+    
+    #stop {
+        position: absolute;
+        top: 615px;
+        left: 740px;
+        color: white;
+        background-color: transparent !important;
+        border-color: transparent!important;
+        font-size: 13px;
+    }
+    
+    #delete-content {
+        position: absolute;
+        height: 15px;
+        top: 590px;
+        left: 822px;
+        color: white;
+        background-color: transparent !important;
+        border-color: transparent!important;
+    }
+    
+    .round-button{ 
+     
+        width: 55px; 
+     
+        height: 35px; 
+     
+        text-decoration: none; 
+     
+        display: inline-block; 
+     
+        outline: none; 
+     
+        cursor: pointer; 
+     
+        border-style: none; 
+     
+        color: white; 
+     
+        background-color: transparent; 
+     
+        border-radius: 100%; 
+     
+        overflow: none; 
+     
+        text-align: center; 
+     
+    } 
+     
+    .round-button:active{ 
+     
+        background-color: #2980b9; 
+     
+    }
+    
+    #hide {
+        display: none;
+    }
+    
+    #hide2 {
+        display: none;
+    }   
+}
