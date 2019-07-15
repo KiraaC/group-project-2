@@ -156,13 +156,13 @@
       if (command === 'open') {
         console.log('opening')
         db.ref("/Data").set({
-          wingStatus: "open"
+          wingStatus: "close"
         })
 
       } else if (command === "close") {
         console.log('closing')
         db.ref("/Data").set({
-          wingStatus: "close"
+          wingStatus: "open"
         })
       } else {
         console.log('unrecognized command')
