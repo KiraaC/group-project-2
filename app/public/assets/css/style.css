@@ -46,6 +46,18 @@ body {
     height: 200px;
     padding-top: 20px;
     float: left;
+    opacity: 0.2;
+}
+
+.info-li {
+    top: 280px;
+    left: 380px;
+    position: absolute;
+    padding-left: 20px;
+    text-align: left;
+    color: black;
+    font-style: bold;
+    font-size: 20px;
 }
 
 .btn_middle {
@@ -68,6 +80,18 @@ body {
     width: 300px;
     height: 200px;
     float: right;
+    opacity: 0.2;
+}
+
+.voice-li {
+    top: 280px;
+    left: 990px;
+    position: absolute;
+    padding-left: 20px;
+    text-align: left;
+    color: black;
+    font-style: bold;
+    font-size: 20px;
 }
 
 .controller img {
@@ -219,6 +243,7 @@ form {
         height: 200px;
         padding-top: 20px;
         float: left;
+        color: blue !important;
     }
 
     .voicerec_info {
@@ -362,4 +387,25 @@ form {
     #hide2 {
         display: none;
     }   
+    .voice-li {
+        top: 280px;
+        left: 1000px;
+        position: absolute;
+        padding-left: 20px;
+        text-align: left;
+        color: black;
+        font-style: bold;
+        font-size: 0px;
+    }
+
+    .info-li {
+        top: 280px;
+        left: 490px;
+        position: absolute;
+        padding-left: 20px;
+        text-align: left;
+        color: black;
+        font-style: bold;
+        font-size: 20px;
+    }
 }
