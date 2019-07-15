@@ -33,11 +33,14 @@ body {
 }
 
 .info-img {
+    background-image: url(../picture/leftwing.png);
+    background-size: 300px 200px !important;
+    background-repeat: no-repeat;
+    background-color: transparent;
     width: 300px;
     height: 200px;
+    padding-top: 20px;
     float: left;
-    margin-right: 0;
-    background-color: #2E64FE !important;
 }
 
 .btn_middle {
@@ -53,12 +56,13 @@ body {
 
 
 .voicerec_info {
+    background-image: url(../picture/rightwing.png);
+    background-size: 300px 200px !important;
+    background-repeat: no-repeat;
     padding-top: 20px;
-    padding-right: 55px;
     width: 300px;
     height: 200px;
     float: right;
-    border-style: solid;
 }
 
 .controller img {
