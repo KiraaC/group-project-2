@@ -79,40 +79,42 @@
                 <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
             </form>
 
+            <div class="contactContainer">
+                <!-- empty for now -->
+            </div>
+            <footer>
+                <a>© 2019 Copyright: Cora, Kira, Seyoung Corp</a>      
+      </footer>
 
     </div>
-    <div class="container contactContainer">
-        <div class="row">
-        <div class="col-sm-3">
-            <div class="card contactCard" style="width: 18rem;"></div>
-        </div>
-        </div>
-        </div>
+
+
+
+            
+
+
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
 
         const queryURL = "/api/contacts";
-
         const getAllContacts = () => {
             $.ajax({
                 url: queryURL,
                 method: "GET"
             }).then((data) => {
-                console.log(data)
-                data.forEach(element => {
-                    console.log(element)
-                    $('.contactCard').append(`<div class="card-header">ID: ${element.id}</li>`);
-                    $('.contactCard').append(`<li class="list-group-item">Last Name: ${element.last_name}</li>`);
-                    $('.contactCard').append(`<li class="list-group-item">First Name: ${element.first_name}</li>`);                   
-                    $('.contactCard').append(`<li class="list-group-item">E-mail: ${element.email_address}</li>`);                   
-                    $('.contactCard').append(`<li class="list-group-item">Phone Number: ${element.phone_nuber}</li>`);                
-                    $('.contactCard').append(`<li class="list-group-item">Character Name: ${element.character_name}</li>`);
-                    $('.contactCard').append(`<li class="list-group-item">Message: ${element.message}</li>`);                   
-                });
-            })
+            console.log(data)
+            data.forEach(element => {
+                console.log(element)
+                $('.contactContainer').append(
+                    `<p>ID: ${element.id} New Contact: </p>` +
+                    `<p>First Name: ${element.first_name}, Last Name: ${element.last_name}, Email: ${element.email_address}, Phone Number: ${element.phone_number}, Character Name: ${element.character_name}, Message: ${element.message}</p>` +
+                    '<hr>'
+                )
+            });
+        })
         }
-
         getAllContacts()
 
         $("#submitBtn").on('click', function (e) {
