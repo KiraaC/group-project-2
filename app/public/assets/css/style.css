@@ -236,6 +236,15 @@ form {
     margin-bottom: 0;
 }
 
+.contactContainer {
+    background-color: transparent !important;
+}
+
+.contactCard {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 @media (max-width: 1235px) {
     .voice-li {
         top: 280px;
